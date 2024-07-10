@@ -1,0 +1,766 @@
+body {
+  /* font-family: "Montserrat","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,"League Spartan",sans-serif; */
+  font-family: "League Spartan";
+
+  font-size: 15px;
+  letter-spacing: .05em;
+  color: #333;
+  background-color: #EFDEBC;
+}
+
+a {
+  transition: opacity .3s;
+  text-decoration: none;
+  color: #1ca9e3;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  border-style: none;
+}
+
+
+
+.pc-only {
+  display: block;
+}
+
+.sp-only {
+  display: none;
+}
+
+
+
+/*--------------------------------
+ レイアウト
+---------------------------------*/
+.wrapper {
+  padding-top: 73px;
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.section:nth-of-type(odd) {
+  background-color: #f7f7f7;
+}
+
+.container {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/*--------------------------------
+ 見出し
+---------------------------------*/
+.title {
+  font-size: 34px;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 40px;
+  text-align: center;
+  letter-spacing: .05em;
+  color: #EFDEBC;
+}
+
+.lead {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/*--------------------------------
+ヘッダー
+---------------------------------*/
+.header {
+  position: fixed;
+  top: 10px;
+  z-index: 100;
+  width: 80%;
+  background-color: #EFDEBC;
+  border-radius: 100px;
+  /* box-shadow: 0 5px 10px -6px rgba(0,0,0,.1); */
+  /*ここから追加*/
+  left: 50%;
+  transform: translateX(-50%);
+  /*ここまで*/
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  margin: 0 auto;
+}
+
+.header-logo {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 2;
+  align-items: center;
+  margin-right: 20px;
+  letter-spacing: .05em;
+}
+
+.header-logo img {
+  height: 40px;
+  margin-right: 8px;
+}
+
+.header-logo a,.gnav-item a{
+  color: #B33E34;
+}
+
+.gnav-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.gnav-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.gnav-item a {
+  position: relative;
+  font-size: 13px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 0;
+  transition: .3s;
+  letter-spacing: .05em;
+}
+.gnav-item a:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  content: "";
+  transition: .3s;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #424b39;
+}
+
+.gnav-item a:hover:after {
+  width: 100%;
+}
+
+.gnav-item a:hover {
+  color: #424b39;
+}
+
+
+
+/*なみなみ*/
+/*========= レイアウトのためのCSS ===============*/
+
+/* #wrapper p{
+  text-align:center;
+} */
+
+/*========= waveを描画するエリア設定 ===============*/
+
+
+.wave{
+  position: relative;
+}
+
+.wave:nth-child(1){
+  background:#fff;  
+}
+
+.wave:nth-child(2){
+  background:#eee;  
+}
+
+.wave:nth-child(3){
+  background:#43c0e4; 
+}
+
+.wave canvas{
+  position: absolute;
+  bottom: 0;
+  left:0;
+  width: 100%;
+}
+/*ここまでなみなみ*/
+
+
+
+
+/*--------------------------------
+ メインビジュアル
+---------------------------------*/
+.mv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  text-align: center;
+  background-color: #EFDEBC;
+  height: 90vh;
+  position: relative;
+}
+
+.mv-container {
+  position: relative;
+  padding: 0 20px;
+}
+
+.mv-container img {
+  width: 100%;
+  margin-bottom: 50px;
+  padding-bottom: 0px;/*波の位置調整用*/
+}
+
+/*--------------------------------
+ Works
+---------------------------------*/
+#works {
+  background-color: #B33E34;
+  padding:90px 0;
+  position: relative;
+}
+
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.works-box {
+  padding: 15px;
+  background-color: #e1e1e1;
+  box-shadow: 10px 10px 5px rgba(51, 51, 51, .2);
+  border-radius: 3px;
+  width: 30%;
+}
+
+.works-item {
+  color: #333;
+}
+
+.works-item:hover {
+  opacity: .9;
+}
+
+/* .works-item:nth-of-type(3n) {
+  margin-right: 0;
+} */
+
+.works-img {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.works-img img {
+  border: 1px solid #e6e6e6;
+}
+
+.works-name {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.works-info {
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+
+/*--------------------------------
+ wave1
+---------------------------------*/
+.wave1 {
+  background-color: #B33E34;
+}
+
+
+/*--------------------------------
+ Skill
+---------------------------------*/
+#skill {
+  background-color: #88443e;
+}
+
+.skill .title {
+  z-index: 20;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* margin-bottom: -50px; */
+  gap: 30px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  width: 45%;
+  /* margin: 15px 15px 30px; */
+  /* background-color: #EFDEBC; */
+  padding: 20px;
+  position: relative;
+  border: 1px solid #EFDEBC;
+  border-radius: 3px;
+}
+
+.skill-img {
+  margin-right: 20px;
+  z-index: 5;
+
+  background-color: #fff;
+  border-radius: 3px;
+  /* height: 65px; */
+  width: 70px;
+  padding: 13px;
+  box-shadow: 10px 10px 5px rgba(51, 51, 51, .2);
+}
+
+.skill-body {
+  flex: 1;
+}
+
+.skill-name {
+  margin-bottom: 10px;
+}
+
+.skill-text {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.skill-name,.skill-text {
+  color: #fff;
+}
+
+
+/*--------------------------------
+ wave2
+---------------------------------*/
+.wave2 {
+  z-index: 15;
+  background-color: #EFDEBC;
+}
+
+
+/*--------------------------------
+ About
+---------------------------------*/
+#about {
+  background-color: #EFDEBC;
+}
+
+.about .title {
+  color: #B33E34;
+}
+.contact-sns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.profile-img {
+  width: 20%;
+  margin-right: 30px;
+  border-radius: 50%;
+}
+
+.profile-img img {
+  border-radius: 50%;
+}
+
+.profile-body {
+  flex: 1;
+  color: #88443e;
+}
+
+.profile-body p {
+  line-height: 1.8;
+}
+
+.profile-body p:first-child {
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1.8;
+}
+
+.profile-body p:nth-child(2) {
+  font-size: 1.2rem;
+}
+
+.profile-body p:last-child {
+  font-size: 1rem;
+}
+
+.contact-list {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 20px;
+}
+
+.contact-text {
+  margin-top: 10px;
+}
+
+.sns-icon {
+  width: 30px;
+}
+
+.sns-box {
+  padding: 15px;
+  margin-left: 10px;
+  background-color: #B33E34;
+  border-radius: 100px;
+}
+
+
+/*--------------------------------
+ Contact
+---------------------------------*/
+.contact {
+  text-align: center;
+}
+
+#contact h2 {
+  color: #B33E34;
+}
+
+.contact-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.contact-name {
+  font-weight: bold;
+}
+
+form {
+  margin: 0 auto;
+  width: 100%;
+}
+
+form span {
+  color: #B33E34;
+}
+
+/*お問い合わせフォームのスタイル*/
+input[type="text"],textarea {
+	width: 50%;
+	outline: none;
+	padding: 0.5em 1em;
+	background: #fff;
+	border-radius: 3px;
+}
+
+textarea{
+	height: 200px;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+	background: #f6ffff;/*フォーカスしたときの背景色*/
+}
+
+/*送信ボタンのスタイル*/
+.btn input {
+	padding: 1em 3em;
+	color: #fff;
+	cursor: pointer;
+	background: #424b39;
+	border-radius: 40px;
+}
+
+.btn input:hover{
+	opacity: 0.8;/*ボタンのロールオーバー*/
+  background-color: #1ca9e3;
+  top: 10px;
+}
+
+.form-text , .form-textarea {
+  border: #B33E34 1px solid;
+  margin-bottom: 20px;
+}
+/*ここまでお問い合わせフォームのスタイル*/
+
+
+/*--------------------------------
+ ページトップ
+---------------------------------*/
+.page-top {
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #4c4c4c;
+}
+
+.page-top .material-icons-outlined {
+  vertical-align: bottom;
+  color: #fff;
+}
+
+/*--------------------------------
+ フッター
+---------------------------------*/
+.footer {
+  padding: 30px;
+  background-color: #B33E34;
+}
+
+.copyright {
+  font-size: 10px;
+  text-align: center;
+  color: #EFDEBC;
+}
+
+/*--------------------------------
+ 下層：Worksページ
+---------------------------------*/
+.article {
+  padding: 80px 0;
+}
+
+.article-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.article-title {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.article-body {
+  max-width: 720px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+
+.article-body h3 {
+  position: relative;
+  font-size: 18px;
+  margin-bottom: 5px;
+  padding-left: 1em;
+}
+
+.article-body img {
+  width: 100%;
+  height: auto;
+}
+
+.article-body h3:not(:first-child) {
+  margin-top: 50px;
+}
+
+.article-body h3::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  content: "";
+  border-radius: 3px;
+  background-color: #333;
+}
+
+.article-body p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.home-link {
+  text-align: center;
+}
+
+/*media Queries 767
+----------------------------------------------------*/
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+
+  .pc-only {
+    display: none;
+  }
+
+  .sp-only {
+    display: block;
+  }
+
+  /* 見出し */
+  .title {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .lead {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  /* レイアウト */
+  .wrapper {
+    padding-top: 57px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  /* ヘッダー */
+  .header .container {
+    padding: 15px;
+  }
+
+  .header-logo {
+    font-size: 15px;
+    margin-right: 15px;
+  }
+
+  .gnav-item:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .gnav-item a {
+    font-size: 10px;
+  }
+
+  .gnav-item a:after {
+    display: none;
+  }
+
+  /*  メインビジュアル */
+  .mv {
+    height: 40vh;
+  }
+
+  .mv-container {
+    padding: 0 20px;
+  }
+
+  .mv-title {
+    font-size: 30px;
+  }
+  .mv-subtitle {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .mv-text {
+    top: 75%;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* Works */
+  .works-name {
+    font-size: 12px;
+  }
+
+  .works-info {
+    margin-top: 3px;
+  }
+
+  .works-list {
+    justify-content: space-between;
+  }
+
+  .works-item {
+    flex: 0 0 48%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  /* Skill */
+  .skill-list {
+    display: block;
+    margin-bottom: 0;
+  }
+
+  .skill-item {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+
+  .skill-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .skill-name {
+    margin-bottom: 5px;
+  }
+
+  .skill-text {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  /* About */
+  .profile {
+    display: block;
+  }
+  .profile-img {
+    width: 150px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+
+  .profile-body p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .profile-body p:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  /* フッター */
+  .footer {
+    padding: 20px;
+  }
+
+  /* 下層ページ */
+  .article {
+    padding: 50px 0;
+  }
+
+  .article-body h3 {
+    font-size: 16px;
+    padding-left: .8em;
+  }
+
+  .article-body h3:not(:first-child) {
+    margin-top: 30px;
+  }
+
+  .article-body p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+}
