@@ -122,3 +122,23 @@ function drawSine(canvas, t, zoom, delay) {
 }
 
 init();
+
+
+//drawer追記//
+$(function() {
+    $('.drawer-toggle ').on('click', function (e) {
+      e.preventDefault();
+      $(this).toggleClass('is-active');
+      $('.header').toggleClass('is-active');
+      $('.gnav').toggleClass('is-active');
+      if($('.drawer-toggle ').hasClass('is-active')){
+        $('.gnav a').on('click',function(){
+          $('.gnav').removeClass('is-active');
+          $('.header').removeClass('is-active');
+          $('.drawer-toggle ').removeClass('is-active');
+            $('.drawer').removeClass('is-active');
+        });
+      return false;
+      }
+     });
+      });

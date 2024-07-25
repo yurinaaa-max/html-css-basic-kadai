@@ -1,17 +1,17 @@
 body {
   /* font-family: "Montserrat","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,"League Spartan",sans-serif; */
-  font-family: "League Spartan";
+  font-family: "League Spartan","Hiragino Kaku Gothic ProN",sans-serif;
 
   font-size: 15px;
   letter-spacing: .05em;
-  color: #333;
+  color: #592f2c;
   background-color: #EFDEBC;
 }
 
 a {
   transition: opacity .3s;
   text-decoration: none;
-  color: #1ca9e3;
+  color: #B33E34;
 }
 
 img {
@@ -37,16 +37,16 @@ img {
  レイアウト
 ---------------------------------*/
 .wrapper {
-  padding-top: 73px;
+  padding-top: 100px;
 }
 
 .section {
   padding: 90px 0;
 }
 
-.section:nth-of-type(odd) {
-  background-color: #f7f7f7;
-}
+/* .section:nth-of-type(odd) {
+  background-color: #EFDEBC;
+} */
 
 .container {
   max-width: 1340px;
@@ -81,13 +81,12 @@ img {
   top: 10px;
   z-index: 100;
   width: 80%;
+  max-width: 1340px;
   background-color: #EFDEBC;
   border-radius: 100px;
   /* box-shadow: 0 5px 10px -6px rgba(0,0,0,.1); */
-  /*ここから追加*/
   left: 50%;
   transform: translateX(-50%);
-  /*ここまで*/
 }
 
 .header .container {
@@ -277,6 +276,10 @@ img {
   margin-top: 5px;
 }
 
+.works-box:hover {
+  background-color: #EFDEBC;
+}
+
 
 /*--------------------------------
  wave1
@@ -308,7 +311,7 @@ img {
 .skill-item {
   display: flex;
   align-items: center;
-  width: 45%;
+  width: 47%;
   /* margin: 15px 15px 30px; */
   /* background-color: #EFDEBC; */
   padding: 20px;
@@ -413,7 +416,7 @@ img {
 
 .contact-list {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   margin-bottom: 20px;
 }
 
@@ -430,17 +433,23 @@ img {
   margin-left: 10px;
   background-color: #B33E34;
   border-radius: 100px;
+  height: 60px;
+  width: 60px;
 }
 
 
 /*--------------------------------
  Contact
 ---------------------------------*/
-.contact {
+#contact {
+  background-color: #eee;
+}
+
+.contact, .contact-mail {
   text-align: center;
 }
 
-#contact h2 {
+#contact h2, .contact-mail {
   color: #B33E34;
 }
 
@@ -448,21 +457,25 @@ img {
   margin-right: 10px;
 }
 
-.contact-name {
-  font-weight: bold;
-}
-
 form {
   margin: 0 auto;
   width: 100%;
 }
 
-form span {
+.contact-label {
+  font-weight: bold;
+}
+
+.contact-span {
+  margin-left: 15px;
+  font-weight: bold;
   color: #B33E34;
 }
 
 /*お問い合わせフォームのスタイル*/
-input[type="text"],textarea {
+input[type="text"],
+input[type="email"],
+textarea {
 	width: 50%;
 	outline: none;
 	padding: 0.5em 1em;
@@ -475,23 +488,33 @@ textarea{
 }
 
 input[type="text"]:focus,
+input[type="email"]:focus,
 textarea:focus {
-	background: #f6ffff;/*フォーカスしたときの背景色*/
+	background: #fffcf6;/*フォーカスしたときの背景色*/
 }
 
 /*送信ボタンのスタイル*/
-.btn input {
+.btn input ,.home-link a{
 	padding: 1em 3em;
 	color: #fff;
 	cursor: pointer;
 	background: #424b39;
 	border-radius: 40px;
+  box-shadow: 0px 5px 5px rgba(51, 51, 51, .3);
 }
 
-.btn input:hover{
-	opacity: 0.8;/*ボタンのロールオーバー*/
-  background-color: #1ca9e3;
-  top: 10px;
+.btn input:hover ,.home-link a:hover{
+	opacity: 0.8; /*ボタンのロールオーバー*/
+  background-color: #B33E34;
+}
+
+/* ボタンクリック時 */
+.btn input:active ,.home-link a:active{
+  box-shadow: none;
+  position: relative;
+  top: 5px;
+  opacity: 1;
+  transition: .3s;
 }
 
 .form-text , .form-textarea {
@@ -509,7 +532,7 @@ textarea:focus {
   padding: 10px;
   cursor: pointer;
   text-align: center;
-  background-color: #4c4c4c;
+  background-color: #B33E34;
 }
 
 .page-top .material-icons-outlined {
@@ -534,20 +557,46 @@ textarea:focus {
 /*--------------------------------
  下層：Worksページ
 ---------------------------------*/
+.header2 {
+  box-shadow: 3px 3px 10px rgba(76, 63, 63, 0.2);
+}
+
 .article {
-  padding: 80px 0;
+  padding: 120px 0 80px 0;
 }
 
 .article-container {
   max-width: 1040px;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
+}
+
+.article-title::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  content: "";
+  border-radius: 3px;
+  background-color: #B33E34;
 }
 
 .article-title {
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   text-align: center;
+  margin: 0 auto;
+  padding-left: 15px;
 }
+
+.article-title-box {
+  position: absolute;
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 
 .article-body {
   max-width: 720px;
@@ -579,7 +628,7 @@ textarea:focus {
   height: 100%;
   content: "";
   border-radius: 3px;
-  background-color: #333;
+  background-color: #B33E34;
 }
 
 .article-body p {
@@ -590,6 +639,20 @@ textarea:focus {
 
 .home-link {
   text-align: center;
+}
+
+/* ----contact-mail---- */
+.contact-mail {
+  background-color: #EFDEBC;
+}
+
+.contact-mail h2 {
+  color: #B33E34;
+}
+
+.mail-icon {
+  width: 100px;
+  margin: 0 auto 40px auto;
 }
 
 /*media Queries 767
@@ -629,17 +692,23 @@ textarea:focus {
   }
 
   .container {
-    padding: 0 20px;
+    padding: 0 40px;
   }
 
   /* ヘッダー */
   .header .container {
-    padding: 15px;
+    padding: 10px 20px;
   }
 
   .header-logo {
     font-size: 15px;
     margin-right: 15px;
+    line-height: 3;
+    align-items: center;
+  }
+
+  .header-logo img {
+    margin-bottom: 3px;
   }
 
   .gnav-item:not(:last-child) {
@@ -687,7 +756,8 @@ textarea:focus {
   }
 
   .works-list {
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    gap: 20px;
   }
 
   .works-item {
@@ -696,15 +766,20 @@ textarea:focus {
     margin-bottom: 30px;
   }
 
+  .works-box {
+    width: 47%;
+  }
+
   /* Skill */
   .skill-list {
-    display: block;
-    margin-bottom: 0;
+    display: flex;
+    margin-bottom: 35px;
+    gap: 20px;
   }
 
   .skill-item {
-    width: 100%;
-    margin-bottom: 35px;
+    width: 47%;
+    flex-wrap: wrap;
   }
 
   .skill-item:last-child {
@@ -732,12 +807,24 @@ textarea:focus {
 
   .profile-body p {
     font-size: 14px;
-    line-height: 1.7;
+    /* line-height: 1.7; */
   }
 
   .profile-body p:not(:last-child) {
     margin-bottom: 20px;
   }
+
+  /* contact */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 75%;
+    outline: none;
+    padding: 0.5em 1em;
+    background: #fff;
+    border-radius: 3px;
+  }
+  
 
   /* フッター */
   .footer {
@@ -746,7 +833,36 @@ textarea:focus {
 
   /* 下層ページ */
   .article {
-    padding: 50px 0;
+    padding: 100px 0 50px 0;
+  }
+
+  .article-container {
+    position: relative;
+  }
+
+  .article-title::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    content: "";
+    border-radius: 3px;
+    background-color: #B33E34;
+  }
+  
+  .article-title {
+    /* margin-bottom: 30px; */
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 15px;
+  }
+  
+  .article-title-box {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .article-body h3 {
@@ -762,5 +878,127 @@ textarea:focus {
     font-size: 14px;
     line-height: 1.7;
     margin-bottom: 20px;
+  }
+
+
+}
+/*--------------------------------
+これ以下全て追記
+---------------------------------*/
+/*追記*/
+@media screen and (max-width: 500px){
+  .container {
+    padding: 0 20px;
+}
+  .works-list {
+   display: block;
+  }
+  .works-box{
+    margin-top: 40px;
+  }
+  .works-item {
+    margin: 0;
+  }
+
+  .works-box {
+    width: 100%;
+  }
+
+}
+
+/*追記*/
+.drawer-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    width: 100%;
+
+  }
+  .header.is-active  {
+    width: 100%;
+    top: 0;
+  }
+  .header .container {
+    display: block;
+  }
+  .header.is-active .container {
+    padding: 0;
+  }
+  .gnav{
+    transform: translateX(-150%);
+    transition: all 0.6s ease 0s;
+  }
+  .gnav.is-active{
+    display: block;
+    background: #EFDEBC;
+    width: 100%;
+    height:100vh;
+    transform: translateX(0);
+    position: fixed;
+    top: 0;
+
+  }
+   .gnav-list{
+    display: none;
+  }
+  .gnav.is-active .gnav-list{
+    display: block;
+    text-align: center;
+    padding-top: 50px;
+  }
+  .gnav.is-active .gnav-item{
+    margin-top: 40px;
+  }
+  .gnav.is-active .gnav-item a{
+    display: block;
+    font-size: 16px;
+  }
+  .drawer-toggle {
+    display: block;
+    position: fixed;
+    z-index: 150;
+    transition: all 0.6s ease 0s;
+    width: 30px;
+    height: 37px;
+    top: 30px;
+    right: 30px;
+  }
+  .drawer-toggle.is-active .drawer-toggle-icon1 {
+    transform: rotate(-45deg);
+    top: 8px;
+  }
+  .drawer-toggle.is-active .drawer-toggle-icon2 {
+    display: none;
+  }
+  .drawer-toggle.is-active .drawer-toggle-icon3 {
+    transform: rotate(45deg);
+    top: 8px;
+  }
+  .drawer-toggle.is-active::after {
+    display: none;
+  }
+  .drawer-toggle-icons {
+    width: 30px;
+    position: relative;
+  }
+
+  .drawer-toggle-icon1, .drawer-toggle-icon2, .drawer-toggle-icon3 {
+    height: 2px;
+    position: absolute;
+    width: 100%;
+    background: #B33E34;
+    transition: all 0.6s ease 0s;
+    border-radius: 50px;
+  }
+  .drawer-toggle-icon1 {
+    top: 0;
+  }
+  .drawer-toggle-icon2 {
+    top: 8px;
+  }
+  .drawer-toggle-icon3 {
+    top: 16px;
   }
 }
